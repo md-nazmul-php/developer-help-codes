@@ -1,0 +1,36 @@
+==============Wordpress Admin custom Notifications===================
+
+=========== How To Use thsi notice in my custom Theme or plugin?===============
+
+ Step-1: Just Include the 'plugin.php' to use as to plugin notices.
+	Example ===== include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+2nd Step: Include the our custom notice Class 
+Example ===== require_once plugin_dir_path( __FILE__ ) . 'inc/your_class_file_name.php';
+
+Just Make sure that you have included the class with your theme or plugin 
+
+============= Call the notification functions any where  ==================
+
+Example Use below : >>>>>>>>>>>>>>>>>>>>>>
+
+
+add_action('admin_init', function() {
+
+echo '<style>.update-nag, .updated { display: none; }</style>'; // Hide default wp notice.
+
+
+we have 4 types of notifications function that just need to call with Paranmeters .
+
+
+Syntax :  wp_simple_notices_add_info($message_string );
+
+
+	wp_simple_notices_add_info('are really');  // just pass one string as a parameter
+
+	wp_simple_notices_add_success('easy to');
+	wp_simple_notices_add_warning('easy to');
+	wp_simple_notices_add_error('easy to');
+
+
+=============================== End instractions =========================================
